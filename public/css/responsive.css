@@ -118,13 +118,13 @@
      align-items: center;
     }
 
-    .aside_shop{
+    /* .aside_shop{
       width: 90%;
       padding-left: 0;
       margin-bottom: 80px;
-    }
+    } */
 
-    .min_max{
+    /* .min_max{
       justify-content: space-around;
     }
 
@@ -139,5 +139,5 @@
 
     .shop_main{
       width: 100%;
-    }
+    } */
   }

@@ -1,6 +1,12 @@
 const Licencia = require("../models/licencia");
 const Producto = require("../models/producto")
 
+const VALORES_ORDENAR ={
+    MAYOR_A_MENOR:"mayor-menor",
+    MENOR_A_MAYOR:"menor-mayor",
+    ALFABETICO:"alfabetico",
+}
+
 
 
 const mainController = {
@@ -24,16 +30,47 @@ const mainController = {
     },
 
     shop: async (req, res)=>{
-        const { min, max, categoria } = req.query;
+        const { preciomin, preciomax, buscar , ordenar} = req.query;
         
         try{
-            const products = await Producto.findAll({
+            let products = await Producto.findAll({
                 include: {
                     model: Licencia,
                 }
             })
             let logueado = (req.session?.userId ? true : false) ?? false
-            res.render("public/shop", {products: products, logueado});
+
+            if(preciomin && preciomin > 0){
+                products = products.filter(producto => producto.precio >= preciomin)
+            }
+            if(preciomax && preciomax > 0){
+                products = products.filter(producto => producto.precio <= preciomax)
+            }
+            if(buscar && buscar.length > 0){
+                products = products.filter(producto => producto.nombre.toLowerCase().includes(buscar.toLowerCase()))
+            }
+            if(ordenar){
+                switch(ordenar){
+                    case VALORES_ORDENAR.MAYOR_A_MENOR:
+                        products.sort((a, b) => b.precio - a.precio)
+                        break;
+                    case VALORES_ORDENAR.MENOR_A_MAYOR:
+                        products.sort((a, b) => a.precio - b.precio)
+                        break;
+                    case VALORES_ORDENAR.ALFABETICO:
+                        products.sort((a, b) => a.nombre.localeCompare(b.nombre))
+                        break;
+                }
+            }
+
+            let filtros = {
+                preciomin: preciomin,
+                preciomax: preciomax,
+                buscar: buscar,
+                ordenar: ordenar
+            }
+
+            res.render("public/shop", {products: products, logueado, filtros: req.query});
         }catch(e){
             console.log(e)
             res.sendStatus(500).send(e)
