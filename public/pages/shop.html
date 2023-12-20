@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FunkoShop</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/shop.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="shortcut icon" href="/img/branding/isotype.svg" type="image/x-icon" />
+</head>
+
+<body>
+  <header id="nav-active">
+    <nav class="navbar container">
+       <picture class="navbar__logo">
+            <a href="/">
+            <img src="/img/branding/logo_light_horizontal.svg" alt="Logo de Isotope Funkoshop">
+            </a>
+            
+       </picture>         
+       <ul class="navbar__menu" id="nav-list">
+          <li class="navbar__item with-submenu">
+            <a class="navbar__link with-icon" href="/pages/shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon> </a>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="" class="submenu__link">Funkos</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="" class="submenu__link">Remeras</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="" class="submenu__link">Laveros</a>
+                </li>
+            </ul>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="/pages/contact.html">CONTACTO</a> 
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="/login">LOGIN</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__cart" href="/pages/cart.html">
+            <img src="/img/icons/cart-icon.svg" alt="Logo de Carrito">
+            </a>
+          </li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+    </nav>
+</header>
+<div class="shop_all">
+  <div class="container_shop container">
+    <aside class="aside_shop">
+      <section class="shop_buscador">
+        <div class="buscar">
+          <label for="buscar" class="titulo_buscador">BUSCAR</label>
+          <input type="text" name="buscar" id="buscar" class="placeholder_buscador" placeholder="item o categoria" />
+        </div>
+        <br />
+        <div class="ordenar_por">
+          <label for="ordenar" id="label-ordenar" class="titulo_buscador">ORDENAR POR</label>
+          <select class="placeholder_buscador" name="ordenar" id="ordenar">
+            <option value="mayor-menor">Mayor a menor</option>
+            <option value="menor-mayor">Menor a mayor</option>
+            <option value="alfabetico">Alfabético</option>
+          </select>
+        </div>
+        <br />
+        <div class="precio">
+          <p class="titulo_buscador">PRECIO</p>
+        </div>
+        <br />
+        <div class="min_max">
+          <label for="preciomin" id="label-preciomin">MIN</label>
+          <!-- PENDIENTE: ver si no mando width del input al CSS -->
+          <input type="number" name="preciomin" id="preciomin" value="0" class="placeholder_buscador" />
+          <p>-</p>
+          <label for="preciomax" id="label-preciomax">MAX</label>
+          <input type="number" name="preciomax" id="preciomax" value="0" class="placeholder_buscador" />
+        </div>
+        <br />
+        <div class="filtrar">
+          <p class="titulo_buscador">FILTRAR</p>
+          <br />
+        </div>
+        <div class="filtrar_seleccion">
+          <input type="checkbox" name="filtrar" id="filtrar" class="my_checkbox" value="nuevos" />
+          <label for="">NUEVOS</label>
+          <br />
+          <input type="checkbox" name="filtrar" id="filtrar" class="my_checkbox" value="ofertas" />
+          <label for="">OFERTAS</label>
+          <br />
+          <input type="checkbox" name="filtrar" id="filtrar" class="my_checkbox" value="edespecial" />
+          <label for="">EDICIÓN ESPECIAL</label>
+          <br />
+          <input type="checkbox" name="filtrar" id="filtrar" class="my_checkbox" value="favoritos" />
+          <label for="">FAVORITOS</label>
+        </div>
+      </section>
+    </aside>
+    <main class="shop_main">
+      <section class="shop">
+        <ul class="shop_lista">
+          <li>
+            <article class="card-items">
+              <a class="card-item__link" href="">
+                  <picture class="card-item__cover">
+                  <span class="card-item__tag">Nuevo</span>    
+                      <img class="card-item__img--font" src="/img/star-wars/trooper-1.webp" alt="Figura Stormtrooprer Stars Wars">
+                      <img class="card-item__img--back" src="/img/star-wars/trooper-box.webp" alt="Figura de Stormtrooper Stars Wars en caja">
+                  </picture>
+                  <div class="card-item__content">
+                      <p class="card-item__license">STARS WARS</p>
+                      <h4 class="card-item__name">STROMTROOPER LIGHTSABER</h4>                          
+                      <p class="card-item__price">$1799.99</p>
+                      <p class="card-item__promo">3 CUOTAS SIN INTERES</p>    
+                  </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="card-item">
+              <a class="card-item__link"  href="">
+                  <picture  class="card-item__cover">
+                  <span class="card-item__tag">Nuevo</span>
+                      <img class="card-item__img--font" src="/img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon" >
+                      <img class="card-item__img--back" src="/img/pokemon/pidgeotto-box.webp" alt="Figura de Pidgeotto de Pokemon en caja">
+                  </picture>
+                  <div class="card-item__content">
+                    <p class="card-item__license">STARS WARS</p>
+                    <h4 class="card-item__name">STROMTROOPER LIGHTSABER</h4>                          
+                    <p class="card-item__price">$1799.99</p>
+                    <p class="card-item__promo">3 CUOTAS SIN INTERES</p>    
+                </div>
+              </a>
+          </article>
+          </li>
+          <li>
+            <article class="card-item">
+              <a class="card-item__link"  href="">
+                  <picture  class="card-item__cover">
+                  <span class="card-item__tag">Nuevo</span>
+                      <img class="card-item__img--font" src="/img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon" >
+                      <img class="card-item__img--back" src="/img/pokemon/pidgeotto-box.webp" alt="Figura de Pidgeotto de Pokemon en caja">
+                  </picture>
+                  <div class="card-item__content" >
+                      <p class="card-item__license">POKEMON</p>
+                      <h4 class="card-item__name">PIDGEOTTO</h4>
+                      <p class="card-item__price">$ 1799.99</p>
+                      <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
+                  </div>
+              </a>
+          </article>
+          </li>
+          <li>
+            <article class="card-item">
+              <a class="card-item__link"  href="">
+                  <picture  class="card-item__cover">
+                  <span class="card-item__tag">Nuevo</span>
+                      <img class="card-item__img--font" src="/img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon" >
+                      <img class="card-item__img--back" src="/img/pokemon/pidgeotto-box.webp" alt="Figura de Pidgeotto de Pokemon en caja">
+                  </picture>
+                  <div class="card-item__content" >
+                      <p class="card-item__license">POKEMON</p>
+                      <h4 class="card-item__name">PIDGEOTTO</h4>
+                      <p class="card-item__price">$ 1799.99</p>
+                      <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
+                  </div>
+              </a>
+          </article>
+          </li>
+          <li>
+            <article class="card-item">
+              <a class="card-item__link"  href="">
+                  <picture  class="card-item__cover">
+                  <span class="card-item__tag">Nuevo</span>
+                      <img class="card-item__img--font" src="/img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon" >
+                      <img class="card-item__img--back" src="/img/pokemon/pidgeotto-box.webp" alt="Figura de Pidgeotto de Pokemon en caja">
+                  </picture>
+                  <div class="card-item__content" >
+                      <p class="card-item__license">POKEMON</p>
+                      <h4 class="card-item__name">PIDGEOTTO</h4>
+                      <p class="card-item__price">$ 1799.99</p>
+                      <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
+                  </div>
+              </a>
+          </article>
+          </li>
+          <li>
+            <article class="card-item">
+              <a class="card-item__link"  href="">
+                  <picture  class="card-item__cover">
+                  <span class="card-item__tag">Nuevo</span>
+                      <img class="card-item__img--font" src="/img/pokemon/pidgeotto-1.webp" alt="Figura de Pidgeotto de Pokemon" >
+                      <img class="card-item__img--back" src="/img/pokemon/pidgeotto-box.webp" alt="Figura de Pidgeotto de Pokemon en caja">
+                  </picture>
+                  <div class="card-item__content" >
+                      <p class="card-item__license">POKEMON</p>
+                      <h4 class="card-item__name">PIDGEOTTO</h4>
+                      <p class="card-item__price">$ 1799.99</p>
+                      <p class="card-item__promo">3 CUOTAS SIN INTERES</p>
+                  </div>
+              </a>
+          </article>
+          </li>
+          
+        </ul>
+      </section>
+      <section class="shop_paginas">
+        <div>
+          <ul>
+            <input type="button" class="primer_boton" value="&lt" />
+            <input type="button" class="pagina_seleccionada" value="1" />
+            <input type="button" value="2" />
+            <input type="button" value="..." />
+            <input type="button" value="9" />
+            <input type="button" value="10" />
+            <input type="button" value="&gt" />
+          </ul>
+        </div>
+      </section>
+  </div>
+</div>
+  <footer class="footer">
+    <nav class="navbar container">       
+        <ul class="navbar__item">
+            <li class="navbar__item">
+                <a class="navbar__link" href="/pages/shop.html">SHOP</a>  
+            </li>                
+            <li class="navbar__item">
+                <a class="navbar__link" href="/login">INGRESAR</a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/pages/contact.html">CONTACTO</a>
+            </li>
+        </ul>
+        <picture>
+                <img src="/img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+        </picture>
+    </nav>    
+       
+    <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy</p>
+</footer> 
+</body>
+
+</html>
+<script src="/js/index.js"></script>

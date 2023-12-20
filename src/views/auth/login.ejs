@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunkoShop</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link
+      rel="shortcut icon"
+      href="../img/branding/isotype.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <%- include('../partials/headerAdmin') %>
+    <main>
+      <div class="login-main">
+        <div class="login-tittle">INGRESAR A MI CUENTA</div>
+        <div>
+          <form class="login-form" action="/login" method="post">
+            <div class="user-register">
+              <label for="Email">Email:</label>
+              <input
+                type="text"
+                class="borde_rojo input_texto input-login"
+                placeholder="johndoe@correo.com"
+                name="email"
+              />
+            </div>
+            <div class="password-register">
+              <label class="password-field" for="password">Contraseña:</label>
+              <input
+                type="password"
+                class="borde_rojo input_texto input-login"
+                placeholder="********"
+                name="password"
+              />
+            </div>
+            <div class="actions-login">
+              <button type="submit" class="boton-login">Ingresar</button>
+              <div class="recordarme">
+                <input type="checkbox" class="checkbox-login" />
+                <label class="recordarme-label">Recordarme</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <a href="#" class="password-lost">Olvidé mi contraseña</a>
+      </div>
+    </main>
+    <%- include('../partials/footerAdmin') %>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

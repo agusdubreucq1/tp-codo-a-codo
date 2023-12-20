@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adm|Funkoshop</title>
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link rel="stylesheet" href="../../css/listProducts.css" />
+  </head>
+  <body>
+    <%- include('../../partials/headerAdmin') %>
+    <main class="main_list_products">
+      <aside class="container search_container">
+        <img class="search" src="/img/icons/search_icon.svg" alt="Lupa" />
+        <input
+          class="container placeholder"
+          type="text "
+          placeholder="codigo,nombre o categoria"
+        />
+      </aside>
+      <section class="container section">
+        <div class="title_section">
+          <h2 class="titulo">LISTADO DE PRODUCTOS</h2>
+          <p class="btn_agregar">AGREGAR <a href="/admin/products/create"><img src="/img/icons/mas.svg"></a></p>
+        </div>
+        <table class="table">
+          <thead>
+            <tr class="tr">
+              <th class="tr-th">ID</th>
+              <th>Codigo</th>
+              <th>Nombre del Producto</th>
+              <th>Categoria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% products.forEach((product) => { %>
+                <tr class="tr">
+                    <td><%= product.id %></td>
+                    <td><%= product.SKU %></td>
+                  <td><%= product.nombre %></td>
+                  <td><%= product.Category.nombre %></td>
+                  <td><a href="/admin/products/edit/<%= product.id %>"><img src="../../img/icons/edit_pencil.svg" alt="" /></a></td>
+                  <td>
+                    <form
+                    class="form-delete"
+                    action="/admin/products/<%= product.id %>?_method=DELETE"
+                    method="post"
+                  >
+                    <button type="submit" class="btn_borrar"><img src="../../img/icons/delete_trash.svg" alt="" /></button>
+                  </form>
+                  </td>
+                  
+                </div>
+                <% }); %>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <%- include('../../partials/footerAdmin') %>
+  </body>
+</html>

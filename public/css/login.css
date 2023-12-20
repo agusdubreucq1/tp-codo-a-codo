@@ -1,0 +1,126 @@
+/*---------login--------------*/
+
+.login-main {
+  margin: var(--spacings-36) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-between;
+}
+.login-tittle {
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Raleway;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 49px;
+  letter-spacing: 0.04em;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  /* padding: 1rem; */
+  gap: var(--spacings-36)
+}
+.input-login:focus {
+  outline: none;
+}
+
+.input-login{
+    border: none;
+    padding: 5px;
+    border-bottom: 2px solid var(--primary-solid);
+}
+
+.user-register {
+  justify-content: space-between;
+  display: flex;
+  width: 380px;
+  align-items: center;
+}
+.password-register {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 380px;
+}
+
+.user-register label,
+.password-register label {
+  color: #000;
+  text-align: right;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.96px;
+}
+
+.input-login{
+    width: 200px;
+}
+
+.input-email {
+  width: 10em;
+}
+
+.input-password {
+  width: 10em;
+}
+.actions-login {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  align-items: center;
+}
+.checkbox-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 0px;
+}
+
+.recordarme {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recordarme-label {
+  color: #1f1f1f;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.password-lost {
+  color: #1d84b5;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.boton-login {
+  display: flex;
+  background: #ff3333;
+  padding: 10px 30px;
+  border: 0;
+  color: white;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 600;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+.boton-login :hover {
+  color: #313131;
+}

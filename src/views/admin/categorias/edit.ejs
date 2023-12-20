@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar categoria</title>
+</head>
+<body>
+    <%- include('../../partials/headerAdmin') %>
+    <h1>Editar categoria</h1>
+    <form action="/admin/categorias/<%= categoria.id %>?_method=PUT" method="post" >
+        <label>nombre</label>
+        <input name="nombre" value="<%= typeof values != 'undefined' ? values.nombre : categoria.nombre %>"></input>
+        <button>Editar</button>
+    </form>
+    <%- include('../../partials/footerAdmin') %>
+</body>
+</html>

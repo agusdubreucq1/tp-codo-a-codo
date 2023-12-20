@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunkoShop</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <link rel="shortcut icon" href="/img/branding/isotype.svg" type="image/x-icon" />
+  </head>
+
+  <body>
+    <%- include('../partials/headerAdmin') %>
+    <main class="main-register">
+      <h1 class="title-register">CREA TU CUENTA</h1>
+      <p class="complete-register">Completa el formulario para ser parte del mundo de los Funkos</p>
+
+      <% if (typeof errors != 'undefined') { %>
+      <div class="errores">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+
+      <div class="register-container">
+        <form class="form-container" method="post" action="/register">
+          <div class="user-register">
+            <label for="name">Nombre:</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name="name"
+              id=""
+              placeholder="Jhon"
+              value="<%= typeof values != 'undefined' ? values.name : '' %>"
+            />
+          </div>
+          <div class="user-register">
+            <label for="last-name">Apellido</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name="lastname"
+              placeholder="Doe"
+              value="<%= typeof values != 'undefined' ? values.lastname : '' %>"
+            />
+          </div>
+          <div class="user-register">
+            <label for="Email">Email:</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name="email"
+              id=""
+              placeholder="johndoe@correo.com"
+              value="<%= typeof values != 'undefined' ? values.email : '' %>"
+            />
+          </div>
+          <div class="password-register">
+            <label class="password-field" for="password">Contraseña:</label>
+            <input
+              type="password"
+              class="borde_rojo input_texto input-register"
+              name="password"
+              id=""
+              placeholder="********"
+              value=""
+            />
+          </div>
+          <div class="password-register">
+            <label for="re-password">Repetir Contraseña:</label>
+            <input
+              type="password"
+              class="borde_rojo input_texto input-register"
+              name="password_repeat"
+              id=""
+              placeholder="********"
+              value=""
+            />
+          </div>
+          <div class="sumit-container">
+            <input type="submit" class="boton_rojo" value="Registrar" />
+            <div class="terminos-y-condiciones">
+              <input type="checkbox" class="checkbox-register" value="" />
+              <p class="terms">
+                Acepto <a href="terminos-y-condiciones.html" class="link_terminos"> Términos y Condiciones</a>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include('../partials/footerAdmin') %>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

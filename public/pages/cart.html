@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="shortcut icon" href="/img/branding/isotype.svg" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar container">
+       <picture class="navbar__logo">
+            <a href="/">
+            <img src="/img/branding/logo_light_horizontal.svg" alt="Logo de Isotope Funkoshop">
+            </a>
+            
+       </picture>         
+       <ul class="navbar__menu">
+          <li class="navbar__item with-submenu">
+            <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon> </a>
+            <ul class="submenu">
+                <li class="submenu__item">
+                    <a href="" class="submenu__link">Funkos</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="" class="submenu__link">Remeras</a>
+                </li>
+                <li class="submenu__item">
+                    <a href="" class="submenu__link">Laveros</a>
+                </li>
+            </ul>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="/pages/contact.html">CONTACTO</a> 
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="/login">LOGIN</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__cart" href="/pages/cart.html">
+            <img src="/img/icons/cart-icon.svg" alt="Logo de Carrito">
+            </a>
+          </li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+    </nav>
+</header>
+  <main class="main_carrito">
+    <h2 class="titulo_carrito">CARRITO DE COMPRAS</h2>
+    <div class="titulo_lista">
+      <p>DETALLE DE PRODUCTO</p>
+      <p>CANTIDAD</p>
+      <p>TOTAL</p>
+    </div>
+
+    <section class="contenedor_producto">
+
+<div class="cart_producto">
+        <picture class="cart_img">
+          <img src="/img/star-wars/baby-yoda-1.webp" alt="Figura coleccionable Funko de la serie The Mandalorian"
+            width="20%" />
+        </picture>
+        <div class="cart_detalle">
+          <h2>BABY YODA BLUEBALL</h2>
+          <p>STAR WARS</p>
+          <p>Precio unitario: $ 1799,99</p>
+        </div>
+</div>
+
+  <div class="cart_cantidad">
+       
+        <div class=""><p>2</p></div>
+      
+      <picture>
+        <img src="/img/icons/+.svg" class="color_svg" alt="" />
+
+
+        <img src="/img/icons/-.svg" alt="">
+
+      </picture>
+</div>
+
+      <div>
+        <p class="cart_precio">$ 3.599,98</p>
+      </div>
+    </section>
+  <div>
+    <p class="p_encabezado">RESUMEN</p>
+  </div>
+  </div>
+  <div class="carrito__resumen">
+    <div class="carrito__resumen__grid">
+      <div class="carrito__resumen__cantidad_elementos">
+        <div class="carrito__resumen__contenedor">
+          <div class="carrito__resumen_titulo">
+            <p class="p_resumen_col1">Cantidad Elemento</p>
+          </div>
+          <div class="carrito__resumen_valor">
+            <p>1</p>
+          </div>
+        </div>
+        <div class="carrito__resumen__subtotal">
+          <div class="carrito__resumen__contenedor">
+            <div class="carrito__resumen_titulo">
+              <p class="p_resumen_col1">Subtotal</p>
+            </div>
+            <div class="carrito__resumen_valor">
+              <p>10000</p>
+            </div>
+          </div>
+        </div>
+        <div class="carrito__resumen__envio">
+          <div class="carrito__resumen__contenedor">
+            <div class="carrito__resumen__titulo">
+              <p class="p_resumen_col1">Envio</p>
+            </div>
+            <div class="carrito__resumen_valor">
+              <p>0</p>
+            </div>
+          </div>
+        </div>
+        <div class="carrito__resumen__linea">
+          <div class="carrito__resumen__contenedor">
+            <div class="carrito__resumen__titulo">
+              <p class="p_resumen_col1">----------------------------------------------------</p>
+            </div>
+  
+          </div>
+        </div>
+        <div class="carrito__resumen__total">
+          <div class="carrito__resumen__contenedor">
+            <div class="carrito__resumen__titulo">
+              <p class="p_resumen_col1">Total</p>
+            </div>
+            <div class="carrito__resumen_valor">
+              <p>10000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carrito__resumen_boton">
+        <button type="button" class="btn btn-primary btn-sm d-block d-sm-none d-sm-block d-md-none" id="submit">IR A
+          PAGAR</button>
+      </div>
+  
+    </div>
+  </div>
+    
+  </main>
+  <footer class="footer">
+    <nav class="navbar container">       
+        <ul class="navbar__item">
+            <li class="navbar__item">
+                <a class="navbar__link" href="/pages/shop.html">SHOP</a>  
+            </li>                
+            <li class="navbar__item">
+                <a class="navbar__link" href="/login">INGRESAR</a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/pages/contact.html">CONTACTO</a>
+            </li>
+        </ul>
+        <picture>
+                <img src="/img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+        </picture>
+    </nav>    
+       
+    <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy</p>
+</footer> 
+  <script src="/js/index.js"></script>
+</body>
+
+</html>

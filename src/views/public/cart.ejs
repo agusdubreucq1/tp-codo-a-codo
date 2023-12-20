@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/carrito.css" />
+    <link rel="shortcut icon" href="/img/branding/isotype.svg" type="image/x-icon" />
+  </head>
+
+  <body>
+    <% if(logueado) { %> <%- include('../partials/headerAdmin') %> <% }else{ %> <%- include('../partials/header') %> <%
+    } %>
+
+    <main class="main_carrito container">
+      <div class="container-carrito">
+        <h2 class="titulo_carrito">CARRITO DE COMPRAS</h2>
+
+        <section class="contenedor_producto">
+          <div class="titulo_lista">
+            <p>DETALLE DE PRODUCTO</p>
+            <p>CANTIDAD</p>
+            <p>TOTAL</p>
+          </div>
+
+          <div class="item_carrito">
+            <div class="cart_producto">
+              <picture class="cart_img">
+                <img
+                  src="/img/star-wars/baby-yoda-1.webp"
+                  alt="Figura coleccionable Funko de la serie The Mandalorian"
+                />
+              </picture>
+              <div class="cart_detalle">
+                <h2 class="cart__nombre">BABY YODA BLUEBALL</h2>
+                <p class="cart__licencia">STAR WARS</p>
+                <p class="cart__precio">Precio unitario: $ 1799,99</p>
+              </div>
+            </div>
+
+            <div class="cart_cantidad">
+              <input value="2" class="input_stock" />
+              <picture>
+                <img src="/img/icons/mas2.svg" class="agregar" alt="" />
+                <img src="/img/icons/menos.svg" alt="" class="restar" />
+              </picture>
+            </div>
+
+            <div class="cart_precio">
+              <p class="precio">$ 3.599,98</p>
+            </div>
+
+            <div class="cart_eliminar">
+              <img src="/img/icons/gg_close-o.svg" />
+            </div>
+          </div>
+        </section>
+
+        <section class="section-resumen">
+          <div class="resumen">
+            <h2 class="resumen-title">RESUMEN</h2>
+            <div class="resumen__detalles">
+              <div class="item-detalles">
+                <p class="item-detalles__key">CANTIDAD DE ELEMENTOS</p>
+                <P class="item-detalles__value">3</P>
+              </div>
+
+              <div class="item-detalles">
+                <p class="item-detalles__key">SUBTOTAL</p>
+                <P class="item-detalles__value">$ 5000,97</P>
+              </div>
+
+              <div class="item-detalles">
+                <p class="item-detalles__key">ENVIO</p>
+                <P class="item-detalles__value">$ 500,00</P>
+              </div>
+
+              <div class="item-detalles total">
+                <p>TOTAL</p>
+                <P class="item-detalles__value">$ 5500,97</P>
+              </div>
+            </div>
+
+            <input class="boton_rojo" value="IR A PAGAR" type="button" />
+          </div>
+        </section>
+      </div>
+    </main>
+    <% if(logueado) { %> <%- include('../partials/footerAdmin') %> <% }else{ %> <%- include('../partials/footer') %> <%
+    } %>
+    <script src="/js/index.js"></script>
+    <script src="/js/item.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunkoShop</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/adminSofia.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link
+      rel="shortcut icon"
+      href="/img/branding/isotype.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container">
+         <picture class="navbar__logo">
+              <a href="/">
+              <img src="/img/branding/logo_light_horizontal.svg" alt="Logo de Isotope Funkoshop">
+              </a>
+              
+         </picture>         
+         <ul class="navbar__menu">
+            <li class="navbar__item with-submenu">
+              <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon> </a>
+              <ul class="submenu">
+                  <li class="submenu__item">
+                      <a href="" class="submenu__link">Funkos</a>
+                  </li>
+                  <li class="submenu__item">
+                      <a href="" class="submenu__link">Remeras</a>
+                  </li>
+                  <li class="submenu__item">
+                      <a href="" class="submenu__link">Laveros</a>
+                  </li>
+              </ul>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__link" href="/pages/contact.html">CONTACTO</a> 
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__link" href="/login">LOGIN</a>
+            </li>
+            <li class="navbar__item">
+              <a class="navbar__cart" href="/pages/cart.html">
+              <img src="/img/icons/cart-icon.svg" alt="Logo de Carrito">
+              </a>
+            </li>
+          </ul>
+          <div class="menu-toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+      </nav>
+  </header>
+    <main class="main-register">
+      <h1 class="title-register">CONTACTO</h1>
+      <p class="complete-register">
+        Complete el formulario para poder contactarle
+      </p>
+      <div class="register-container">
+        <form class="form-container" action="">
+          <div class="user-register">
+            <label for="name">Nombre:</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name=""
+              id=""
+              placeholder="Jhon"
+              value=""
+            />
+          </div>
+          <div class="user-register">
+            <label for="last-name">Apellido</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name=""
+              id=""
+              placeholder="Doe"
+              value=""
+            />
+          </div>
+          <div class="user-register">
+            <label for="Email">Email:</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name=""
+              id=""
+              placeholder="johndoe@correo.com"
+              value=""
+            />
+          </div>
+          <div class="user-register">
+            <label for="Email">Teléfono</label>
+            <input
+              type="text"
+              class="borde_rojo input_texto input-register"
+              name=""
+              id=""
+              placeholder="1144553366"
+              value=""
+            />
+          </div>
+          <br />
+          <br />
+          <div class="message-register">
+            <label for="message">Mensaje</label>
+            <textarea
+              class="borde_rojo input_texto input-register message"
+              name="message"
+              id="message"
+              placeholder="Escribe tu mensaje aquí..."
+            ></textarea>
+          </div>
+          <br />
+          <br />
+          <div class="sumit-container">
+            <input
+              type="submit"
+              class="boton_rojo input-button"
+              value="Enviar"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="footer">
+      <nav class="navbar container">       
+          <ul class="navbar__item">
+              <li class="navbar__item">
+                  <a class="navbar__link" href="/pages/shop.html">SHOP</a>  
+              </li>                
+              <li class="navbar__item">
+                  <a class="navbar__link" href="/login">INGRESAR</a>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__link" href="/pages/contact.html">CONTACTO</a>
+              </li>
+          </ul>
+          <picture>
+                  <img src="/img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+          </picture>
+      </nav>    
+         
+      <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy</p>
+</footer> 
+    <script src="/js/index.js"></script>
+  </body>
+</html>

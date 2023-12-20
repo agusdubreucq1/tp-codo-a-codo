@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunkoShop</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/item.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <link
+      rel="shortcut icon"
+      href="/img/branding/isotype.svg"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <% if(logueado) { %>
+        <%- include('../partials/headerAdmin') %>
+        <% }else{ %> <%- include('../partials/header') %> <% } %>
+    <main class="container main_item">
+      <section class="item_container">
+        <picture class="item_img">
+          <img
+            src="/img/productos/<%= product.imagen_front %>"
+            alt="Figura coleccionable Funko"
+          />
+        </picture>
+        <div class="texto_item">
+          <p class="articulo_franquicia"><%= product.Licencium.nombre %></p>
+          <h3 class="articulo_titulo"><%= product.nombre %></h3>
+          <p class="articulo_descripcion">
+            Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga,
+            edición limitada.
+          </p>
+          <p class="articulo_precio">$ 1799,99</p>
+          <div class="botones">
+            <div class="rectangulo">
+              <input type="number" value="0" class="input_stock" />
+              <div class="signos">
+                <div class="mas agregar">
+                  <img src="/img/icons/+.svg" alt="mas" srcset="" class=""/>
+                </div>
+                <div class="menos restar">
+                  <img src="/img/icons/-.svg" alt="menos" srcset="" class=""/>
+                </div>
+              </div>
+            </div>
+
+            <input
+              type="submit"
+              class="boton_rojo"
+              value="Agregar al Carrito"
+            />
+          </div>
+          <p class="articulo_cuotas">
+            <span>Ver métodos de pago</span> -3 CUOTAS SIN INTERÉS
+          </p>
+        </div>
+      </section>
+
+      <section class="slider container glide">
+        <h2 class="slider__title">PRODUCTOS RELACIONADOS</h2>
+        <div class="glide__track" data-glide-el="track">
+            <ul class="slider__items glide__slides">
+                <% products.forEach((product)=>{
+                    %> <li class="slider__item glide__slide">
+                        <article class="card-items">
+                            <a class="card-item__link" href="/item/<%= product.id %>">
+                                <picture class="card-item__cover">
+                                <span class="card-item__tag">Nuevo</span>    
+                                    <img class="card-item__img--front" src="/img/productos/<%= product.imagen_front %>" alt="imagen del producto front">
+                                    <img class="card-item__img--back" src="/img/productos/<%= product.imagen_back %>" alt="imagen del producto back">
+                                </picture>
+                                <div class="card-item__content">
+                                    <p class="card-item__license"><%= product.Licencium.nombre %></p>
+                                    <h4 class="card-item__name"><%= product.nombre %></h4>                          
+                                    <p class="card-item__price">$<%= product.precio %></p>
+                                    <p class="card-item__promo"><%= product.cuotas %> CUOTAS SIN INTERES</p>    
+                                </div>
+                            </a>
+                        </article>
+                    </li>
+                 <% }) %>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+            <iconify-icon icon="tabler:chevron-left"></iconify-icon>
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+            <iconify-icon icon="tabler:chevron-right"></iconify-icon>
+          </button>
+        </div>
+      </section>
+    </main>
+    <% if(logueado) { %>
+        <%- include('../partials/footerAdmin') %>
+        <% }else{ %> <%- include('../partials/footer') %> <% } %>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/item.js"></script>
+    <script>
+      new Glide(".glide", {
+        type: "carousel",
+        startAt: 0,
+        perView: 3,
+        gap: 30,
+        breakpoints: {
+          991: {
+            perView: 2,
+          },
+          768: {
+            perView: 1,
+          },
+        },
+      }).mount();
+    </script>
+  </body>
+</html>

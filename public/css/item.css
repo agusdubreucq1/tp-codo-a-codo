@@ -1,0 +1,207 @@
+.main_item{
+  margin: 64px auto;
+}
+
+.item_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0 20px;
+}
+
+.item_img img{
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+}
+
+.texto_item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item_renglon {
+  display: flex;
+  flex-direction: column;
+}
+
+.articulo_franquicia {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+}
+
+.articulo_titulo {
+  font-family: Inter;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+}
+
+.articulo_descripcion {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+}
+
+.articulo_precio {
+  font-family: Inter;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 0em;
+}
+
+.articulo_cuotas {
+  color: var(--secondary-solid);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+}
+
+.articulo_cuotas span{
+    text-decoration: underline;
+}
+
+.botones {
+  display: flex;
+  gap: 30px;
+  margin: 15px 0;
+}
+
+.rectangulo {
+  display: flex;
+  gap: 9px;
+}
+
+.input_stock {
+  border: 0.5px solid #c9c9c9;
+  text-align: center;
+  padding: 7px;
+  font-size: 20px;
+  width: 100px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.signos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mas,
+.menos {
+  height: 16px;
+  width: 16px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4f4f4f;
+  user-select: none;
+}
+
+.itembt_rojo {
+  width: 100px;
+  height: 35px;
+  background-color: #ff3333;
+}
+
+.boton_rojo {
+  background: #ff3333;
+  border: 0;
+  color: white;
+  font-family: Inter;
+  padding: 0 15px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+}
+
+/* .slider{
+  margin: 40px 20px;
+} */
+
+@media screen and (width < 950px) {
+  .item_img img{
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (width < 750px) {
+  .item_container{
+    grid-template-columns: 1fr;
+  }
+
+  .item_img{
+    display: flex;
+    justify-content: center;
+  }
+
+  .articulo_franquicia {
+    font-size: 10px;
+    line-height: 12.5px;
+  }
+  
+  .articulo_titulo {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  
+  .articulo_descripcion {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  
+  .articulo_precio {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .slider__title{
+    font-size: 30px;
+    margin: 0 20px;
+  }
+
+}
+
+@media screen and (width < 450px){
+  .item_img img{
+    width: 300px;
+    height: 300px;
+  }
+
+  .botones{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .boton_rojo{
+    width: 180px;
+    height: 38px;
+  }
+
+  .card-item__cover{
+    width: 280px;
+  }
+}
+

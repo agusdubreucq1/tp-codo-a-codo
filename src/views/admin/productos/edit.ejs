@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>      
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FunkoShop</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/editProduct.css" />
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link
+      rel="shortcut icon"
+      href="/img/branding/isotype.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <%- include('../../partials/headerAdmin') %>
+    <main class="main_edit container">
+      <h1 class="title">EDITAR ITEM</h1>
+
+      <% if (typeof errors != 'undefined') { %>
+        <div class="errores">
+          <ul>
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+
+      <form method="post"
+      action="/admin/products/<%= product.id %>?_method=PUT"
+      enctype="multipart/form-data">
+        <div class="renglon1">
+          <div class="select_categoria">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+              <% categorias.forEach((categoria)=>{ %>
+                <option value="<%= categoria.id %>" <%= product.CategoryId == categoria.id ? 'selected' : '' %> > <%= categoria.nombre %> </option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="select_licencia">
+            <label for="licencia">Licencia:</label>
+            <select name="licencia" id="licencia">
+              <% licencias.forEach((licencia)=>{ %>
+                <option value="<%= licencia.id %>" <%= product.LicenciumId == licencia.id ? 'selected' : '' %>><%= licencia.nombre %></option>
+              <% }) %>
+            </select>
+          </div>
+        </div>
+
+        <div class="renglon">
+          <div class="renglon__div">
+            <label for="">Nombre del producto:</label>
+            <input
+              class="input_texto input_grande"
+              placeholder="Escribe norma del producto"
+              value="<%= typeof values != 'undefined' ? values.nombre : product.nombre %>"
+              name="nombre"
+            />
+          </div>
+        </div>
+
+        <div class="renglon">
+          <textarea name="descripcion" id="" placeholder="Descripción del producto"><%= typeof values != 'undefined' ? values.descripcion : product.descripcion %></textarea>
+        </div>
+
+        <div class="renglon">
+          <div class="renglon__div">
+            <label for="">SKU:</label>
+            <input
+              type="text"
+              class="input_texto input_mediano"
+              name="SKU"
+              placeholder="SSK111AB001"
+              value="<%= typeof values != 'undefined' ? values.SKU : product.SKU %>"
+            />
+          </div>
+
+          <div class="renglon__div">
+            <label for="">Precio:</label>
+            <input
+              type="number"
+              class=input_texto input_mediano"
+              placeholder="$ 0.000,00"
+              value="<%= typeof values != 'undefined' ? values.precio : product.precio %>"
+              name="precio"
+              min="0"
+            />
+          </div>
+          
+          <div class="renglon__div">
+            <label for="">Stock:</label>
+            <input
+              type="number"
+              class="input_texto input_chico"
+              placeholder="0"
+              value="<%= typeof values != 'undefined' ? values.stock : product.stock %>"
+              name="stock"
+              min="0"
+            />
+          </div>
+        </div>
+
+        <div class="renglon">
+          <div class="renglon__div">
+            <label for="">Descuento:</label>
+            <input
+              type="number"
+              class="input_texto input_chico"
+              placeholder="0%"
+              value="<%= typeof values != 'undefined' ? values.descuento : product.descuento %>"
+              name="descuento"
+              min="0"
+            />
+          </div>
+
+          <div class="renglon__div">
+            <label for="">Cuotas:</label>
+            <select name="cuotas" id="">
+              <option value="3" <%= product.cuotas === 3 ? 'selected' : '' %>>3 Cuotas sin interes</option>
+              <option value="6" <%= product.cuotas === 6 ? 'selected' : '' %>>6 Cuotas sin interes</option>
+              <option value="12" <%= product.cuotas === 12 ? 'selected' : '' %>>12 Cuotas sin interes</option>
+              <option value="18" <%= product.cuotas === 18 ? 'selected' : '' %>>18 Cuotas sin interes</option>
+            </select>
+          </div>
+          
+        </div>
+
+        <div class="renglon">
+          <div class="renglon__div">
+            <label for="">Imagenes:</label>
+            <input type="file" name="imagenes" id="" multiple />
+          </div>
+          
+        </div>
+
+        <div class="figuras_imagenes">
+          <div class="imagenesYTexto">
+            <picture>
+              <img
+                src="/img/productos/<%= product.imagen_front %>"
+                class="imagenesfiguras"
+              >
+            </picture>
+            <p>Frente</p>
+          </div>
+          <div class="imagenesYTexto">
+            <picture>
+              <img
+                src="/img/productos/<%= product.imagen_back %>"
+                class="imagenesfiguras"
+                alt=""
+              />
+            </picture>
+            <p>Dorso</p>
+          </div>
+        </div>
+
+        <div class="renglon">
+          <input type="submit" class="boton_rojo" value="Modificar Producto" />
+        </div>
+        
+      </form>
+    </main>
+    <%- include('../../partials/footerAdmin') %>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
