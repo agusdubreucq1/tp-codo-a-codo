@@ -23,8 +23,9 @@ const isLogin = (req, res, next)=>{
     }
 }
 
-
 const app = express()
+
+const URL_NETLIFY = "/.netlify/functions/index"
 
 app.use(method_override("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
@@ -37,11 +38,11 @@ app.set('view engine', 'ejs')
 let carpeta_views = path.join(__dirname, '/src/views')
 app.set('views', carpeta_views)
 
-app.use('/', authRoute)
-app.use('/', mainRoutes)
+app.use(`${URL_NETLIFY}/`, authRoute)
+app.use(`${URL_NETLIFY}/`, mainRoutes)
 
-app.use('/admin/products',isLogin, productRoute)
-app.use('/admin/categorias', isLogin, categoriaRoute)
+app.use(`${URL_NETLIFY}/admin/products`,isLogin, productRoute)
+app.use(`${URL_NETLIFY}/admin/categorias`, isLogin, categoriaRoute)
 
 app.use("*", (req, res)=>{
     res.send({
@@ -49,6 +50,7 @@ app.use("*", (req, res)=>{
         description: `Ruta ${req.originalUrl} método ${req.method} no implementada`
     })
 })
+
 
 
 const PORT = process.env.PORT || 3000
