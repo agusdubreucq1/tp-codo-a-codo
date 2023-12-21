@@ -79,6 +79,7 @@ const productController = {
           // sharp(req.files[i].buffer)
           //   .resize(300)
           //   .toFile(newPath);
+          fs.chmodSync(newPath, 0o777);
           fs.writeFileSync(newPath, req.files[i].buffer);
         }
         newProduct.update({
@@ -88,7 +89,7 @@ const productController = {
       }
       res.redirect("/admin/products");
     } catch (e) {
-      res.send("Error");
+      res.send("Error", e);
     }
 
   },
@@ -214,6 +215,7 @@ const productController = {
           // sharp(req.files[i].buffer)
           //   .resize(300)
           //   .toFile(newPath);
+          fs.chmodSync(newPath, 0o777);
           fs.writeFileSync(newPath, req.files[i].buffer);
         }
         product.update({
@@ -224,7 +226,7 @@ const productController = {
       res.redirect("/admin/products");
     } catch (e) {
       console.log(e);
-      res.send("error al editar");
+      res.send("error al editar", e);
     }
   },
   delete: async (req, res) => {
