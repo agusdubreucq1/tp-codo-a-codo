@@ -43,6 +43,13 @@ app.use('/', mainRoutes)
 app.use('/admin/products',isLogin, productRoute)
 app.use('/admin/categorias', isLogin, categoriaRoute)
 
+app.use("*", (req, res)=>{
+    res.send({
+        error: -2,
+        description: `Ruta ${req.originalUrl} método ${req.method} no implementada`
+    })
+})
+
 
 const PORT = process.env.PORT || 3000
 
