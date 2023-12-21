@@ -1,0 +1,21 @@
+[build]
+  # El comando para construir tu aplicación
+  command = "npm run build"
+  # El directorio donde se encuentran tus archivos estáticos
+  publish = "public"
+  # El directorio donde se encuentran tus funciones de Netlify
+  functions = "."
+
+[functions]
+  # Los módulos externos que usas en tus funciones
+  external_node_modules = ["express", "sequelize", "cookie-session", "method-override"]
+  # El paquete que usas para empaquetar tus funciones
+  node_bundler = "esbuild"
+
+[[redirects]]
+  # Una regla de redirección para que Express pueda manejar las rutas que empiezan con /api
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/index/:splat"
+

@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const serverless = require('serverless-http');
+
 const express = require("express")
 const path = require("path")
 const mainRoutes = require("./src/routes/mainRoutes");
@@ -44,11 +46,22 @@ app.use('/admin/categorias', isLogin, categoriaRoute)
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, async ()=>{
-    try{
+// app.listen(PORT, async ()=>{
+//     try{
+//         await sequelize.sync();
+//     }catch(e){
+//         console.log('error de conexion a la db: ', e)
+//     }
+//     console.log(`Escuchando en el puerto ${PORT}: http://localhost:${PORT}`)
+// })
+
+module.exports.handler = serverless(app, {
+    callback: async () => {
+      try {
         await sequelize.sync();
-    }catch(e){
+      } catch (e) {
         console.log('error de conexion a la db: ', e)
+      }
+      console.log('Aplicación lista')
     }
-    console.log(`Escuchando en el puerto ${PORT}: http://localhost:${PORT}`)
-})
+  });
