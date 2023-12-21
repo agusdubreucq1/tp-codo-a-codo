@@ -1,5 +1,5 @@
 .main_edit {
-  padding: var(--spacings-36) 0;
+  padding: var(--spacings-36) 20px;
 }
 
 .title {
@@ -73,6 +73,29 @@ textarea {
   padding: 15px;
   border: 1px solid #1f1f1f;
   border-radius: 4px;
+}
+
+.valores-secundarios {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 36px;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.renglon__div:nth-child(5), .valores-secundarios > div:last-child {
+  grid-column: span 2;
+}
+
+
+
+.valores-secundarios label, .renglon label {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0.04em;
 }
 
 .renglon {
@@ -161,4 +184,89 @@ select {
   font-family: Raleway;
   font-weight: 500;
   word-wrap: break-word;
+}
+
+
+
+/* media queris de create */
+@media screen and (max-width: 800px) {
+  .renglon {
+    flex-direction: column;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .valores-secundarios {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (width < 650px) {
+
+  .title{
+    font-size: 32px;
+  }
+  .renglon1 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .valores-secundarios > input:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (width < 510px) {
+
+  .renglon .renglon__div{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .valores-secundarios {
+    grid-template-columns: 1fr;
+  }
+
+  .valores-secundarios > div:last-child, .renglon__div:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .valores-secundarios > div:last-child{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .renglon__div:nth-child(5){
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .container_nombre{
+    flex-direction: column;
+  }
+
+  .container_nombre input{
+    width: 100%;
+  }
+
+  .valores-secundarios label, .container_nombre label, .renglon label {
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .renglon{
+    align-items: flex-start;
+  }
+
+  .renglon1 label{
+    font-size: 22px;
+  }
+
+  .botones-submit{
+    justify-content: center;
+  }
 }

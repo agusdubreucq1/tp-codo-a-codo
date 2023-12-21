@@ -23,7 +23,7 @@
     font-weight: 500;
     line-height: 38px;
     letter-spacing: 0.04em;
-    text-align: right;
+    text-align: center;
 }
 
 .errores {
@@ -137,4 +137,23 @@
   font-family: Inter;
   font-weight: 600;
   word-wrap: break-word;
+}
+
+
+@media screen and (width < 650px) {
+
+  .title-register{
+    font-size: 32px;
+  }
+
+  .complete-register{
+    font-size: 24px;
+  }
+
+  .form-container > div {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  
 }

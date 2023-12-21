@@ -37,9 +37,9 @@
           <div class="select_categoria">
             <label for="categoria">Categoria:</label>
             <select name="categoria" id="categoria">
-              <option value="" disabled selected hidden>Seleccionar</option>
+              <option value="" disabled selected hidden > Seleccionar </option>
               <% categorias.forEach((categoria)=>{ %>
-              <option value="<%= categoria.id %>" <%=  typeof values != 'undefined' && values.categoria == categoria.id  ? 'selected' : '' %>>
+              <option value="<%= categoria.id %>" <%=  typeof values != 'undefined' && values.categoria == categoria.id  ? 'selected' : '' %> >
                 <%= categoria.nombre %>
               </option>
               <% }) %>
@@ -74,8 +74,10 @@
             placeholder="Descripción del producto"
           ><%= typeof values != 'undefined' ? values.descripcion : '' %></textarea>
         </div>
-        <div class="renglon">
-          <div class="renglon__div">
+
+        <section class="valores-secundarios">
+          
+            <div class="renglon__div">
             <label for="">SKU:</label>
             <input
               type="text"
@@ -110,9 +112,7 @@
               min="0"
             />
           </div>
-        </div>
 
-        <div class="renglon">
           <div class="renglon__div">
             <label for="">Descuento:</label>
             <input
@@ -127,20 +127,22 @@
 
           <div class="renglon__div">
             <label for="">Cuotas:</label>
-          <select name="cuotas" id="">
-            <option value="3" <%=  typeof values != 'undefined' && values.cuotas == 3  ? 'selected' : '' %>>3 Cuotas sin interes</option>
-            <option value="6" <%=  typeof values != 'undefined' && values.cuotas == 6  ? 'selected' : '' %>>6 Cuotas sin interes</option>
-            <option value="12" <%=  typeof values != 'undefined' && values.cuotas == 12  ? 'selected' : '' %>>12 Cuotas sin interes</option>
-            <option value="18" <%=  typeof values != 'undefined' && values.cuotas == 18  ? 'selected' : '' %>>18 Cuotas sin interes</option>
-          </select>
+            <select name="cuotas" id="">
+              <option value="3" <%=  typeof values != 'undefined' && values.cuotas == 3  ? 'selected' : '' %>>3 Cuotas sin interes</option>
+              <option value="6" <%=  typeof values != 'undefined' && values.cuotas == 6  ? 'selected' : '' %>>6 Cuotas sin interes</option>
+              <option value="12" <%=  typeof values != 'undefined' && values.cuotas == 12  ? 'selected' : '' %>>12 Cuotas sin interes</option>
+              <option value="18" <%=  typeof values != 'undefined' && values.cuotas == 18  ? 'selected' : '' %>>18 Cuotas sin interes</option>
+            </select>
           </div>
           
-        </div>
-        <div class="renglon">
+        
+  
           <label for="">Imagenes:</label>
           <input type="file" name="imagenes" id="" multiple />
-        </div>
-        <div class="renglon">
+      
+        </section>
+        
+        <div class="botones-submit">
           <input
             type="submit"
             class="boton_rojo"

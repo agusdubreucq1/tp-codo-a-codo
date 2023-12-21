@@ -67,7 +67,7 @@
           <textarea name="descripcion" id="" placeholder="Descripción del producto"><%= typeof values != 'undefined' ? values.descripcion : product.descripcion %></textarea>
         </div>
 
-        <div class="renglon">
+        <section class="valores-secundarios">
           <div class="renglon__div">
             <label for="">SKU:</label>
             <input
@@ -83,7 +83,7 @@
             <label for="">Precio:</label>
             <input
               type="number"
-              class=input_texto input_mediano"
+              class="input_texto input_mediano"
               placeholder="$ 0.000,00"
               value="<%= typeof values != 'undefined' ? values.precio : product.precio %>"
               name="precio"
@@ -102,9 +102,7 @@
               min="0"
             />
           </div>
-        </div>
 
-        <div class="renglon">
           <div class="renglon__div">
             <label for="">Descuento:</label>
             <input
@@ -127,15 +125,15 @@
             </select>
           </div>
           
-        </div>
 
-        <div class="renglon">
           <div class="renglon__div">
             <label for="">Imagenes:</label>
             <input type="file" name="imagenes" id="" multiple />
           </div>
           
-        </div>
+        </section>
+
+        
 
         <div class="figuras_imagenes">
           <div class="imagenesYTexto">

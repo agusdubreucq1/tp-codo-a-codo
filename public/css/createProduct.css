@@ -1,5 +1,5 @@
 .main_edit {
-  padding: var(--spacings-36) 0;
+  padding: var(--spacings-36) 20px;
 }
 
 .title {
@@ -8,6 +8,7 @@
   font-weight: 700;
   line-height: 49px;
   letter-spacing: 0.04em;
+  text-align: center;
 }
 
 .errores {
@@ -17,23 +18,23 @@
   border-radius: 10px;
 }
 
-.errores ul{
+.errores ul {
   justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.errores ul li{
+.errores ul li {
   text-align: center;
   color: #ff3333;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacings-36);
-    margin-top: 40px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacings-36);
+  margin-top: 40px;
 }
 
 .renglon1 {
@@ -71,22 +72,30 @@ textarea {
   width: 827px;
   height: 200px;
   padding: 15px;
-  border: 1px solid #1F1F1F;
+  border: 1px solid #1f1f1f;
   border-radius: 4px;
 }
 
-.renglon {
-  display: flex;
-  gap: 54px;
+.valores-secundarios {
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 36px;
+  justify-items: flex-start;
   align-items: center;
 }
 
-.renglon__div{
-    display: flex;
-    gap: 18px;
+.renglon__div {
+  display: flex;
+  gap: 18px;
 }
 
-.renglon label, .container_nombre label {
+.renglon__div:nth-child(5) {
+  grid-column: span 2;
+}
+
+
+.valores-secundarios label, .container_nombre label {
   font-family: Inter;
   font-size: 24px;
   font-weight: 400;
@@ -95,45 +104,119 @@ textarea {
 }
 
 .input_texto {
-    color: #313131;
-    font-size: 18px;
-    font-family: Inter;
-    font-weight: 500;
-    border: none;
-    padding: 5px;
-    border-bottom: 2px solid var(--primary-900);
+  color: #313131;
+  font-size: 18px;
+  font-family: Inter;
+  font-weight: 500;
+  border: none;
+  padding: 5px;
+  border-bottom: 2px solid var(--primary-900);
 }
 
-.input_texto:focus{
-    outline: none;
+.input_texto:focus {
+  outline: none;
 }
 
-.input_chico{
-    width: 55px;
-    text-align: center;
+.input_chico {
+  width: 55px;
+  text-align: center;
 }
 
-.input_mediano{
-    width: 130px;
+.input_mediano {
+  width: 130px;
 }
 
 select {
-    color: #727272;
-    border: 2px solid #30343F;
-    border-radius: 6px;
-    font-size: 20px;
-    font-family: Inter;
-    font-weight: 500;
-    word-wrap: break-word;
+  color: #727272;
+  border: 2px solid #30343f;
+  border-radius: 6px;
+  font-size: 20px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.boton_rojo {
+  background: #ff3333;
+  padding: 10px 30px;
+  border: 0;
+  color: white;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.botones-submit{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .renglon {
+    flex-direction: column;
   }
 
-  .boton_rojo {
-    background: #ff3333;
-    padding: 10px 30px;
-    border: 0;
-    color: white;
-    font-size: 14px;
-    font-family: Inter;
-    font-weight: 600;
-    word-wrap: break-word;
+  textarea {
+    width: 100%;
   }
+
+  .valores-secundarios {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (width < 650px) {
+
+  .title{
+    font-size: 32px;
+  }
+  .renglon1 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .valores-secundarios > input:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (width < 510px) {
+  .valores-secundarios {
+    grid-template-columns: 1fr;
+  }
+
+  .valores-secundarios > input:last-child, .renglon__div:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .renglon__div:nth-child(5){
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container_nombre{
+    flex-direction: column;
+  }
+
+  .container_nombre input{
+    width: 100%;
+  }
+
+  .valores-secundarios label, .container_nombre label {
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .renglon1 label{
+    font-size: 22px;
+  }
+
+  .botones-submit{
+    justify-content: center;
+  }
+}

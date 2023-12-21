@@ -18,6 +18,7 @@
   font-weight: 700;
   line-height: 49px;
   letter-spacing: 0.04em;
+  text-align: center;
 }
 .login-form {
   display: flex;
@@ -58,6 +59,10 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.96px;
+}
+
+input {
+  font-size: 16px;
 }
 
 .input-login{
@@ -123,4 +128,27 @@
 }
 .boton-login :hover {
   color: #313131;
+}
+
+
+@media screen and (width < 650px) {
+  .login-tittle{
+    font-size: 32px;
+  }
+
+  .login-form > div{
+    flex-direction: column;
+  }
+
+  .user-register, .password-register{
+    width: 100%;
+  }
+
+  .actions-login{
+    gap: 20px;
+  }
+  
+  .password-lost{
+    margin-top: 15px;
+  }
 }
