@@ -8,7 +8,7 @@
 
 [functions]
   # Los módulos externos que usas en tus funciones
-  external_node_modules = ["express", "sequelize", "cookie-session", "method-override"]
+  external_node_modules = ["express", "sequelize", "cookie-session", "method-override", "ejs"]
   # El paquete que usas para empaquetar tus funciones
   node_bundler = "esbuild"
 
