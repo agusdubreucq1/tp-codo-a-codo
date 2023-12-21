@@ -2,7 +2,7 @@ const Categoria = require("../../models/categoria");
 const Licencia = require("../../models/licencia");
 const Producto = require("../../models/producto");
 
-const sharp = require("sharp");
+// const sharp = require("sharp");
 const path = require("path");
 const fs = require("node:fs");
 const { validationResult } = require("express-validator");
@@ -76,9 +76,10 @@ const productController = {
                   i > 0 ? "back" : "front"
                 }.jpg`
               )
-          sharp(req.files[i].buffer)
-            .resize(300)
-            .toFile(newPath);
+          // sharp(req.files[i].buffer)
+          //   .resize(300)
+          //   .toFile(newPath);
+          fs.writeFileSync(newPath, req.files[i].buffer);
         }
         newProduct.update({
           imagen_front: `producto_${newProduct.id}_front.jpg`,
@@ -210,9 +211,10 @@ const productController = {
                   i > 0 ? "back" : "front"
                 }.jpg`
               )
-          sharp(req.files[i].buffer)
-            .resize(300)
-            .toFile(newPath);
+          // sharp(req.files[i].buffer)
+          //   .resize(300)
+          //   .toFile(newPath);
+          fs.writeFileSync(newPath, req.files[i].buffer);
         }
         product.update({
           imagen_front: `producto_${product.id}_front.jpg`,

@@ -4,6 +4,18 @@ const multer = require("multer")
 const { formValidations } = require('../../middlewares/validacionForm')
 const upload = multer({ storage: multer.memoryStorage()})
 
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, "/img/productos");
+//     },
+//     filename: function (req, file, cb) {
+
+//       cb(null, Date.now() + "-" + file.originalname);
+//     },
+//   });
+  
+// const upload = multer({ storage: storage });
+
 const router = express.Router()
 
 
