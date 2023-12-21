@@ -1,3 +1,4 @@
+const Categoria = require("../models/categoria");
 const Licencia = require("../models/licencia");
 const Producto = require("../models/producto")
 
@@ -30,7 +31,7 @@ const mainController = {
     },
 
     shop: async (req, res)=>{
-        const { preciomin, preciomax, buscar , ordenar} = req.query;
+        const { preciomin, preciomax, buscar , ordenar, categoria, licencia} = req.query;
         
         try{
             let products = await Producto.findAll({
@@ -38,6 +39,11 @@ const mainController = {
                     model: Licencia,
                 }
             })
+            let categorias = await Categoria.findAll();
+            let licencias = await Licencia.findAll();
+
+            console.log(categorias, licencias);
+            
             let logueado = (req.session?.userId ? true : false) ?? false
 
             if(preciomin && preciomin > 0){
@@ -48,6 +54,12 @@ const mainController = {
             }
             if(buscar && buscar.length > 0){
                 products = products.filter(producto => producto.nombre.toLowerCase().includes(buscar.toLowerCase()))
+            }
+            if(categoria){
+                products = products.filter(producto => producto.CategoryId == categoria)
+            }
+            if(licencia){
+                products = products.filter(producto => producto.LicenciumId == licencia)
             }
             if(ordenar){
                 switch(ordenar){
@@ -67,10 +79,12 @@ const mainController = {
                 preciomin: preciomin,
                 preciomax: preciomax,
                 buscar: buscar,
-                ordenar: ordenar
+                ordenar: ordenar,
+                categoria: categoria,
+                licencia: licencia
             }
 
-            res.render("public/shop", {products: products, logueado, filtros: req.query});
+            res.render("public/shop", {products: products, licencias, categorias, logueado, filtros: req.query});
         }catch(e){
             console.log(e)
             res.sendStatus(500).send(e)

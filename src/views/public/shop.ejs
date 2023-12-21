@@ -41,6 +41,25 @@
                 <option value="alfabetico" <%=  filtros.ordenar === 'alfabetico' ? 'selected' : ''  %>>Alfabético</option>
               </select>
             </div>
+            <div class="ordenar_por">
+              <label for="categoria" id="label-ordenar" class="titulo_buscador">CATEGORIA</label>
+              <select class="placeholder_buscador" name="categoria" id="categoria">
+                <option value="" selected>seleccionar</option>
+                <% categorias.forEach((category)=>{ %>
+                  <option value="<%= category.id %>" <%=  filtros.categoria == category.id ? 'selected' : ''  %>><%= category.nombre %></option>
+                <% }) %>
+              </select>
+            </div>
+
+            <div class="ordenar_por">
+              <label for="licencia" id="label-ordenar" class="titulo_buscador">LICENCIA</label>
+              <select class="placeholder_buscador" name="licencia" id="licencia">
+                <option value="" selected>seleccionar</option>
+                <% licencias.forEach((licencia)=>{ %>
+                  <option value="<%= licencia.id %>" <%=  filtros.licencia == licencia.id ? 'selected' : ''  %>><%= licencia.nombre %></option>
+                <% }) %>
+              </select>
+            </div>
             <div class="precio">
               <p class="titulo_buscador">PRECIO</p>
               <div class="min_max">
