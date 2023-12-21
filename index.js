@@ -35,7 +35,7 @@ app.use(session({
 app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'ejs')
-let carpeta_views = path.join(__dirname, '/src/views')
+let carpeta_views = path.join(__dirname, 'src/views')
 app.set('views', carpeta_views)
 
 app.use(`${URL_NETLIFY}/`, authRoute)
