@@ -143,3 +143,44 @@ td {
     height: 200px;
     width: 300px;
 }
+
+@media screen and (width < 800px) {
+
+ .titulo{
+  font-size: 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+ }
+
+ .btn_agregar{
+  font-size: 20px;
+ }
+
+ .btn_agregar img{
+  width: 30px;
+ }
+
+ th{
+  font-size: 18px;
+ }
+
+ td{
+  font-size: 16px;
+ }
+
+ .tr img{
+  width: 20px;
+ }
+  tr > th:first-child, tr > td:first-child, tr > td:nth-child(5), tr > td:last-child{
+    width: 50px;
+    display: inline-block;
+  }
+  tr > td:nth-child(4), tr > th:nth-child(4){
+    display: none;
+  }
+
+  td a, td > div{
+    display: flex;
+  }
+}
