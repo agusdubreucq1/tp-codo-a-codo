@@ -22,8 +22,10 @@ const mainController = {
                     model: Licencia,
                 }
             })
+            let categorias = await Categoria.findAll();
+            let licencias = await Licencia.findAll();
             let logueado = (req.session?.userId ? true : false) ?? false;
-            res.render("index", {products: products, logueado});
+            res.render("index", {products: products, logueado, categorias, licencias});
         }catch(e){
             console.log(e)
             res.sendStatus(500).send(e)
@@ -42,8 +44,6 @@ const mainController = {
             let categorias = await Categoria.findAll();
             let licencias = await Licencia.findAll();
 
-            console.log(categorias, licencias);
-            
             let logueado = (req.session?.userId ? true : false) ?? false
 
             if(preciomin && preciomin > 0){
@@ -101,8 +101,9 @@ const mainController = {
                 }
             })
             const product = products.find(producto=> producto.id === id);
+            const categorias = await Categoria.findAll();
             let logueado = (req.session?.userId ? true : false) ?? false;
-            res.render("public/item", {product: product, products: products, logueado})
+            res.render("public/item", {product: product, products: products, logueado, categorias})
 
         }catch(e){
             console.log(e)
@@ -116,9 +117,10 @@ const mainController = {
     about: (req, res)=>res.send("about"),
     faqs: (req, res)=>res.send("faqs"),
 
-    cart: (req, res)=>{
+    cart: async (req, res)=>{
         let logueado = (req.session?.userId ? true : false) ?? false;
-        res.render("public/cart", {logueado})
+        const categorias = await Categoria.findAll();
+        res.render("public/cart", {logueado, categorias})
     }
 }
 

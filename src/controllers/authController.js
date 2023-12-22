@@ -1,10 +1,13 @@
 const User = require("../models/user");
 const { validationResult } = require("express-validator");
 const bycript = require("bcryptjs");
+const Categoria = require("../models/categoria");
 
 const authController = {
-  register: (req, res) => {
-    res.render("auth/register");
+  register: async (req, res) => {
+    let logueado = (req.session?.userId ? true : false) ?? false;
+    const categorias = await Categoria.findAll()
+    res.render("auth/register", {categorias, logueado});
   },
   postRegister: async (req, res) => {
     const errors = validationResult(req);
@@ -25,8 +28,10 @@ const authController = {
       res.send(e);
     }
   },
-  login: (req, res) => {
-    res.render("auth/login");
+  login: async (req, res) => {
+    let logueado = (req.session?.userId ? true : false) ?? false;
+    const categorias = await Categoria.findAll()
+    res.render("auth/login", {categorias, logueado});
   },
   postLogin: async (req, res) => {
     const { email, password } = req.body;
